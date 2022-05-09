@@ -15,13 +15,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
   <link rel="stylesheet" href="css/ionicons.min.css">
   <script src="https://kit.fontawesome.com/08c92dc578.js" crossorigin="anonymous"></script>
-  
+
   <link rel="stylesheet" href="css/style.css">
-   
+
   <title>Petes.com</title>
 
   <link rel="stylesheet" type="text/css" href="contact-form.css">
-  
+
   <script>
     $(function () {
       $("#mi-formulario").validate({
@@ -60,14 +60,12 @@
   </script>
   <script languaje="javascript">
 
-    function contarPalabras(form)
-    
-    {
-    texto = form.mensaje.value
-    texto = texto.split(" ")
-    form.cantidad.value=texto.length
+    function contarPalabras(form) {
+      texto = form.mensaje.value
+      texto = texto.split(" ")
+      form.cantidad.value = texto.length
     }
-    </script>
+  </script>
 
 </head>
 
@@ -98,8 +96,8 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom01">Correo Electrónico</label>
-            <input type="text" class="form-control" name="correo" id="validationCustom01" placeholder="nombre@gmail.com"
-              required>
+            <input type="email" class="form-control" name="correo" id="validationCustom01"
+              placeholder="nombre@gmail.com" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -117,11 +115,12 @@
           <div class="col-md-12 mb-3 ">
             <div class="form-floating">
               <label for="validationCustom03">Mensaje</label>
-              <textarea class="form-control" name="mensaje"  placeholder="Mande su mensaje" id="floatingTextarea2"
-                minlength="5" style="height: 100px" onKeyPress="contarPalabras(this.form);  if (event.keycode1 == 13) form.mensaje.value +=' ';"></textarea><br>
-                <h6>cantidad de palabras</h6>
-                <input  type="text" name="cantidad" value="0" size="2" disabled ><br>
-              </div>
+              <textarea class="form-control" name="mensaje" placeholder="Mande su mensaje" id="floatingTextarea2"
+                minlength="5" style="height: 100px"
+                onKeyPress="contarPalabras(this.form);  if (event.keycode1 == 13) form.mensaje.value +=' ';"></textarea><br>
+              <h6>cantidad de palabras</h6>
+              <input type="text" name="cantidad" value="0" size="2" disabled><br>
+            </div>
 
 
           </div>
