@@ -19,54 +19,6 @@
   <link rel="stylesheet" href="css/style.css">
 
   <title>Petes.com</title>
-
-  <link rel="stylesheet" type="text/css" href="contact-form.css">
-
-  <script>
-    $(function () {
-      $("#mi-formulario").validate({
-
-        rules: {
-          correo: {
-            required: true,
-            correo: true
-          },
-          asunto: "required",
-          mensaje: "required",
-
-        }, //rules
-        messages: {
-
-          correo: {
-            required: 'ingresa su Correo Electrónico',
-            correo: 'Formato De Correo Inválido'
-          },
-          asunto: {
-            required: 'Ingresa una direccion',
-            minlength: 'cantidad de caracteres insuficiente'
-          },
-          mensaje: {
-            required: 'Ingrese Un mensaje',
-            minlength: 'cantidad de caracteres insuficiente'
-          },
-
-        }
-
-      });
-    });
-
-
-
-  </script>
-  <script languaje="javascript">
-
-    function contarPalabras(form) {
-      texto = form.mensaje.value
-      texto = texto.split(" ")
-      form.cantidad.value = texto.length
-    }
-  </script>
-
 </head>
 
 <body>
@@ -82,59 +34,47 @@
         <a class="nav-link " href="index.html">Home <span class="sr-only">(current)</span></a>
         <a class="nav-link" href="somos.html">Somos</a>
         <a class="nav-link" href="galeria.html">Galeria</a>
+        <a class="nav-link" href="clientes.html">Clientes</a>
+      </div>
+      <div class="navbar-nav ml-auto">
+        <a class="nav-link " href="register.html">Register</a>
+        <a class="nav-link" href="login.html">Login</a>
       </div>
     </div>
   </nav>
-  <br>
-  <div class="row justify-content-center">
-    <h4 class="font-weight-bold">contacto</h4>
-  </div>
-  <br>
-  <div class="card m-3 bg-light">
-    <div class="card-body">
-      <form class="needs-validation" id="mi-formulario" action="contacto.html">
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationCustom01">Correo Electrónico</label>
-            <input type="email" class="form-control" name="correo" id="validationCustom01"
-              placeholder="nombre@gmail.com" required>
-            <div class="valid-feedback">
-              Looks good!
+
+
+  <div class="container">
+    <div class="card m-3 bg-light">
+      <div class="card-body">
+        <form >
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="validationCustom02">Asunto</label>
+              <input type="text" class="form-control" name="asunto" id="validationCustom02" >
             </div>
           </div>
-          <div class="col-md-6 mb-3">
-            <label for="validationCustom02">asunto</label>
-            <input type="text" class="form-control" name="asunto" id="validationCustom02" minlength="3"
-              placeholder="Escriba su asunto" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Mensaje:</label>
+            <textarea name="mensaje" class="form-control"  name="mensaje" id="exampleFormControlTextarea1" rows="3"
+              onKeyPress="contarPalabras(this.form); if (event.keycode1 == 13) form.mensaje.value +=' ';"></textarea>
+
+            <label for="cantidad" class="mt-3">Cantidad de palabras:</label>
+            <input type="text" class="form-control col-1" name="cantidad" id="cantidad" value="0" disabled>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-12 mb-3 ">
-            <div class="form-floating">
-              <label for="validationCustom03">Mensaje</label>
-              <textarea class="form-control" name="mensaje" placeholder="Mande su mensaje" id="floatingTextarea2"
-                minlength="5" style="height: 100px"
-                onKeyPress="contarPalabras(this.form);  if (event.keycode1 == 13) form.mensaje.value +=' ';"></textarea><br>
-              <h6>cantidad de palabras</h6>
-              <input type="text" name="cantidad" value="0" size="2" disabled><br>
-            </div>
-
-
-          </div>
-          <br>
-          <div class="col-md-12 text-center">
-            <button class="btn btn-primary" type="submit">Enviar</button>
-
-          </div>
-      </form>
-
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+      </div>
     </div>
   </div>
-  <br>
-  <br>
+
+
 
   <footer class="footer-07">
     <div class="container">
@@ -165,9 +105,15 @@
         </div>
       </div>
     </div>
-    </div>
-    </div>
   </footer>
+
+  <script languaje="javascript">
+    function contarPalabras(form) {
+      texto = form.mensaje.value
+      texto = texto.split(" ")
+      form.cantidad.value = texto.length
+    }
+  </script>
 
 
   <script src="js/jquery.min.js"></script>
